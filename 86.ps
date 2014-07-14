@@ -1,0 +1,115 @@
+%!
+
+/Palatino-Roman 8 selectfont
+/lead 9 def
+/x 25 def
+/Y 750 def
+/colw 145 def
+
+x Y moveto
+
+/nextcol {
+    /x x colw add def
+    x Y moveto
+} def
+
+/printline {
+    gsave show grestore
+    0 lead neg rmoveto
+} def
+
+
+(
+BYM:Blueberry Yogurt Muffin
+CCM:Carrot Cake Muffin
+BSc:Bluberry Scone
+COSc:Cranberry Orange Scone
+PVBS:Petite Vanilla Bean Scone
+
+BNB:Banana Nut Bread
+ML:Chocolate Marble Loaf Cake
+LPC:Iced Lemon Pound Cake
+PKB:Punkin Bread
+
+CCC:Coffe Cake
+RFBCC:Reduced-Fat Berry Coffee Cake
+BCP:Birthday Cake Pop
+ChCP:Chocolate Cake Pop
+CCP:Salted Caramel Cake Pop
+RSPC:Raspberry Swirl Pound Cake
+
+PB:Plain Bagel
+MB:Multigrain Bagel
+EB:Everything w/Cheese Bagel
+\f
+C:Butter Croissant
+ChC:Chocolate Croissant
+HCSq:Ham and Cheese Square
+SSq:Whole Wheat Spinach Square
+TCSq:Tomato and Cheese Square
+SC:Sausage Croissant Roll
+
+CC:Plain Cream Cheese
+RFCC:Reduced-Fat Cream Cheese
+Butter
+
+BCB:Berry Croissant Blossom
+ACt:Almond Croissant Blossom
+
+OFD:Old Fashioned Donut
+CSB:Caramel Sticky Bun
+MBun:Morning Bun
+CD:Cheese Danish
+\f
+ChCC:Chocolate Chip Cookie
+OC:Oatmeal Cookie
+FChCC:Flourless Chocolate Cookie
+MDB:Marshmallow Dream Bar
+CB:Cheesecake Brownie
+ChB:Double Chocolate Brownie
+COB:Cherry Oat Bar
+FC:Flower Sugar Cookie
+
+S:Sausage Classic Breakfast
+RFT:RF Turkey Bacon Breakfast
+EC:Egg and Cheese Breakfast
+B:Bacon Artisan Breakfast
+H:Ham Artisan Breakfast
+RHS:Slow-Roasted Ham & Swiss
+VF:Veggie & Fontiago Breakfast
+
+SFW:Spinach Egg Wrap
+Classic Oatmeal
+Hearty Blueberry Oatmeal
+\f
+Chicken Santa Fe Panini
+Roasted Tomato & Mozzarella Panini
+Ham & Swiss Panini
+Turkey Pesto Panini
+Grilled Cheese Sandwich
+Chicken BLT Sandwich
+Egg Salad Sandwich
+Ham & NY Cheddar Sandwich
+Turkey Havarti Sandwich
+Chicken Caesar Salad Bowl
+Chicken & Black Bean Salad Bowl
+Veggie & Brown Rice Salad Bowl
+Strawberry Blueberry Yogurt
+Greek Yogurt Honey
+Raspberry Lemon Yogurt
+Seasonal Fruit Cup
+Banana
+Fruit, Nut & Cheese Bistro Box
+Protein Bistro Box
+Chicken & Hummus Bistro Box
+\f)
+(\f) {
+    search not {exit} if
+    (\n) {
+        search not {exit} if
+        printline
+    } loop
+    pop
+    nextcol
+} loop
+showpage
