@@ -1,111 +1,119 @@
 %!
 
-612 0 translate
-90 rotate
 
-/Palatino-Roman 11 selectfont
-/lead 21 def
-/x 25 def
-/Y 580 def
-/colw 190 def
+/fontproc { 3 dict begin /name exch def /lead exch def /x exch def
+    ({//name //x selectfont /lead //lead def}) token pop exch pop bind
+end } def
+/B 12 14 /Palatino-Bold fontproc def
+/R 12 14 /Palatino-Roman fontproc def
+/x 40 def
+/Y 770 def
+/colw 300 def
+
+/dolandscape where { pop 612 0 translate 90 rotate /x 25 def /Y 590 def /colw 190 def } if
 
 x Y moveto
+R
 
 /nextcol {
     /x x colw add def
     x Y moveto
 } def
 
+/sigil <5E> def
 /printline {
-    gsave show grestore
+    gsave
+        sigil {
+            search {
+                show exch token pop exec exch
+            }{
+                show exit
+            } ifelse
+        } loop
+    grestore
     0 lead neg rmoveto
 } def
 
 
 (
-BYM:Blueberry Yogurt Muffin
-CCM:Carrot Cake Muffin
-BSc:Bluberry Scone
-COSc:Cranberry Orange Scone
-PVBS:Petite Vanilla Bean Scone
+BYM:Blueberry Yogurt ^B Muffin^R
+CCM:Carrot Cake ^B Muffin^R
+BSc:Bluberry ^B Scone^R
+COSc:Cranberry Orange ^B Scone^R
+PVBS:Petite Vanilla Bean ^B Scone^R
 
 BNB:Banana Nut Bread
-ML:Chocolate Marble Loaf Cake
-LPC:Iced Lemon Pound Cake
-PKB:Punkin Bread
+ML:Chocolate Marble ^B Loaf Cake^R
+LPC:Iced Lemon ^B Pound Cake^R
+PKB:^B Punkin ^R Bread
 
+CCC:Coffe ^B Cake
+RFBCC:Reduced-Fat Berry ^B Coffee Cake
+BCP:Birthday ^B Cake Pop
+ChCP:Chocolate ^B Cake Pop
+CCP:Salted Caramel ^B Cake Pop
+Peppermint Brownie Cake Pop
 
-CCC:Coffe Cake
-RFBCC:Reduced-Fat Berry Coffee Cake
-BCP:Birthday Cake Pop
-ChCP:Chocolate Cake Pop
-CCP:Salted Caramel Cake Pop
-RSPC:Raspberry Swirl Pound Cake
+Cranberry ^B Bliss Bar ^R
 
-PB:Plain Bagel
-MB:Multigrain Bagel
-EB:Everything w/Cheese Bagel
-\f
-C:Butter Croissant
-ChC:Chocolate Croissant
-HCSq:Ham and Cheese Square
-SSq:Whole Wheat Spinach Square
-TCSq:Tomato and Cheese Square
-SC:Sausage Croissant Roll
+PB:Plain ^B Bagel ^R
+MB:Multigrain ^B Bagel ^R
+EB:Everything w/Cheese ^B Bagel ^R
+
+C:Butter ^B Croissant ^R
+ChC:Chocolate ^B Croissant ^R
+HCSq:Ham and Cheese ^B Square ^R
+SSq:Whole Wheat Spinach ^B Square ^R
+TCSq:Tomato and Cheese ^B Square ^R
+SC:^B Sausage Croissant ^R Roll
 
 CC:Plain Cream Cheese
 RFCC:Reduced-Fat Cream Cheese
 Butter
 
-BCB:Berry Croissant Blossom
-ACt:Almond Croissant Blossom
+BCB:Berry ^B Croissant ^R Blossom
+ACt:Almond ^B Croissant ^R Blossom
 
-OFD:Old Fashioned Donut
-CSB:Caramel Sticky Bun
+OFD:Old Fashioned ^B Donut ^R
 MBun:Morning Bun
 CD:Cheese Danish
-\f
-ChCC:Chocolate Chip Cookie
-OC:Oatmeal Cookie
-FChCC:Flourless Chocolate Cookie
+
+ChCC:Chocolate Chip ^B Cookie ^R
+OC:Oatmeal ^B Cookie ^R
+FChCC:Flourless Chocolate ^B Cookie ^R
 MDB:Marshmallow Dream Bar
-CB:Cheesecake Brownie
-ChB:Double Chocolate Brownie
-COB:Cherry Oat Bar
-FC:Flower Sugar Cookie
-
-S:Sausage Classic Breakfast
-RFT:RF Turkey Bacon Breakfast
-EC:Egg and Cheese Breakfast
-B:Bacon Artisan Breakfast
-H:Ham Artisan Breakfast
-RHS:Slow-Roasted Ham & Swiss
-VF:Veggie & Fontiago Breakfast
-
-SFW:Spinach Egg Wrap
-Classic Oatmeal
-Hearty Blueberry Oatmeal
+CB:Cheesecake ^B Brownie ^R
+ChB:Double Chocolate ^B Brownie ^R
+COB:Cherry Oat ^B Bar ^R
+FC:Flower Sugar ^B Cookie ^R
 \f
-Chicken Santa Fe Panini
-Roasted Tomato & Mozzarella Panini
-Ham & Swiss Panini
-Turkey Pesto Panini
-Grilled Cheese Sandwich
-Chicken BLT Sandwich
-Egg Salad Sandwich
-Ham & NY Cheddar Sandwich
-Turkey Havarti Sandwich
+S:^B Sausage ^R Classic Breakfast
+RFT:RF ^B Turkey Bacon ^R Breakfast
+EC:^B Egg and Cheese ^R Breakfast
+B:^B Bacon ^R Artisan Breakfast
+H:^B Ham ^R Artisan Breakfast
+RHS:^B Slow-Roasted Ham ^R & Swiss
+VF:Veggie & ^B Fontiago ^R Breakfast
+
+SFW:Spinach Egg ^B Wrap ^R
+Classic ^B Oat^R meal
+Hearty ^B Blue^R berry Oatmeal
+
+Chicken Santa Fe ^B Panini ^R
+Roasted Tomato & Mozzarella ^B Panini ^R
+Ham & Swiss ^B Panini ^R
+Turkey Pesto ^B Panini ^R
+^B Grilled Cheese ^R Sandwich
+Chicken ^B BLT ^R Sandwich
+^B Turkey Havarti ^R Sandwich
 Chicken Caesar Salad Bowl
 Chicken & Black Bean Salad Bowl
 Veggie & Brown Rice Salad Bowl
 Strawberry Blueberry Yogurt
 Greek Yogurt Honey
 Raspberry Lemon Yogurt
-Seasonal Fruit Cup
-Banana
-Fruit, Nut & Cheese Bistro Box
-Protein Bistro Box
-Chicken & Hummus Bistro Box
+Seasonal ^B Fruit ^R Cup
+Protein ^B Bistro Box ^R
 \f)
 (\f) {
     search not {exit} if
