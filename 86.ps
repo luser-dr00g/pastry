@@ -1,11 +1,24 @@
 %!
-
+% This file implements a self-contained editable document program
+% in postscript. The particular document is (for legal purposes,
+% a parody of) a check-off list of pastry items for a cafe which
+% may bear a name from a character in Hermann Melville's Moby Dick.
+%
+% The pdf file packaged with this file has been generated with 
+% the freely-available ghostscript program, using its utility
+% `ps2pdf`. This file may be edited with a text-editor to alter
+% the text or to add new formatting and style capabilities.
+% `ps2pdf` may then be used again to generate a new, printable pdf.
+/Datestring(:^Ismall revised
+Tue, Dec 16, 2014  1:59:35 AM
+^R)def
 
 /fontproc { 3 dict begin /name exch def /lead exch def /x exch def
     ({//name //x selectfont /lead //lead def}) token pop exch pop bind
 end } def
 /B 12 14 /Palatino-Bold fontproc def
 /R 12 14 /Palatino-Roman fontproc def
+/Ismall 9 10 /Palatino-Roman fontproc def
 /x 40 def
 /Y 770 def
 /colw 300 def
@@ -125,4 +138,6 @@ Protein ^B Bistro Box ^R
     pop
     nextcol
 } loop
+30 30 moveto
+Datestring printline
 showpage
