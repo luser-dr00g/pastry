@@ -10,7 +10,7 @@
 % the text or to add new formatting and style capabilities.
 % `ps2pdf` may then be used again to generate a new, printable pdf.
 /Datestring(:^Ismall revised
-Tue, Dec 16, 2014  1:59:35 AM
+Mon, Feb  9, 2015  4:21:41 PM
 ^R)def
 
 /fontproc { 3 dict begin /name exch def /lead exch def /x exch def
@@ -35,17 +35,21 @@ R
 
 /sigil <5E> def
 /printline {
-    (:) search { pop pop } if
-    gsave
-        sigil {
-            search {
-                show exch token pop exec exch
-            }{
-                show exit
-            } ifelse
-        } loop
-    grestore
-    0 lead neg rmoveto
+    (#) anchorsearch { % suppress lines beginning with #
+        pop pop 
+    }{
+        (:) search { pop pop } if  % suppress short code
+        gsave
+            sigil {
+                search {
+                    show exch token pop exec exch
+                }{
+                    show exit
+                } ifelse
+            } loop
+        grestore
+        0 lead neg rmoveto
+    } ifelse
 } def
 
 
@@ -57,7 +61,7 @@ COSc:Cranberry Orange ^B Scone^R
 PVBS:Petite Vanilla Bean ^B Scone^R
 
 BNB:Banana Nut Bread
-ML:Chocolate Marble ^B Loaf Cake^R
+#ML:Chocolate Marble ^B Loaf Cake^R
 LPC:Iced Lemon ^B Pound Cake^R
 PKB:^B Punkin ^R Bread
 
@@ -66,9 +70,12 @@ RFBCC:Reduced-Fat Berry ^B Coffee Cake^R
 BCP:Birthday ^B Cake Pop^R
 ChCP:Chocolate ^B Cake Pop^R
 CCP:Salted Caramel ^B Cake Pop^R
-Peppermint Brownie Cake Pop
+#Peppermint Brownie Cake Pop
+Salted Caramel ^B Square ^R
+Salted Caramel ^B Tart ^R
+Pecan ^B Tart ^R
 
-Cranberry ^B Bliss Bar ^R
+#Cranberry ^B Bliss Bar ^R
 
 PB:Plain ^B Bagel ^R
 MB:Multigrain ^B Bagel ^R
@@ -85,7 +92,7 @@ CC:Plain Cream Cheese
 RFCC:Reduced-Fat Cream Cheese
 Butter
 
-BCB:Berry ^B Croissant ^R Blossom
+#BCB:Berry ^B Croissant ^R Blossom
 ACt:Almond ^B Croissant ^R Blossom
 
 OFD:Old Fashioned ^B Donut ^R
@@ -96,10 +103,11 @@ ChCC:Chocolate Chip ^B Cookie ^R
 OC:Oatmeal ^B Cookie ^R
 FChCC:Flourless Chocolate ^B Cookie ^R
 MDB:Marshmallow Dream Bar
-CB:Cheesecake ^B Brownie ^R
+#CB:Cheesecake ^B Brownie ^R
 ChB:Double Chocolate ^B Brownie ^R
 COB:Cherry Oat ^B Bar ^R
-FC:Flower Sugar ^B Cookie ^R
+#FC:Flower Sugar ^B Cookie ^R
+Foosball Sugar ^B Cookie ^R
 \f
 S:^B Sausage ^R Classic Breakfast
 RFT:RF ^B Turkey Bacon ^R Breakfast
@@ -120,12 +128,12 @@ Turkey Pesto ^B Panini ^R
 ^B Grilled Cheese ^R Sandwich
 Chicken ^B BLT ^R Sandwich
 ^B Turkey Havarti ^R Sandwich
-Chicken Caesar Salad Bowl
-Chicken & Black Bean Salad Bowl
-Veggie & Brown Rice Salad Bowl
-Strawberry Blueberry Yogurt
-Greek Yogurt Honey
-Raspberry Lemon Yogurt
+Chicken Caesar ^B Salad ^R Bowl
+Chicken & Black Bean ^B Salad ^R Bowl
+Veggie & Brown Rice ^B Salad ^R Bowl
+Strawberry Blueberry ^B Yogurt ^R
+Greek ^B Yogurt ^R Honey
+Raspberry Lemon ^B Yogurt ^R
 Seasonal ^B Fruit ^R Cup
 Protein ^B Bistro Box ^R
 \f)
